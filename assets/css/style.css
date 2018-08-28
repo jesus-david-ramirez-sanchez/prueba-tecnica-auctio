@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f4f4 !important;
+}
+
+input[type=text] {
+  border-radius: 0 !important;
+}
+
+img {
+  width: 350px;
+  height: 250px;
+}
+
+ul li {
+  text-decoration: none !important;
+}
+
+ul li span {
+  font-size: 15px !important;
+}
+
+.puntos {
+  width: 300px;
+  border-left: 2px dotted rgba(7, 7, 7, 0.609);
+  padding: 10px;
+}
+
+.puntos p {
+  text-align: center;
+}
+
+.puntos h4 {
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .puntos {
+    border-left: 0px solid transparent;
+    border-top: 2px dotted rgba(7, 7, 7, 0.609);
+  }
+}
+
+.icons span {
+  color: #444444 !important;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  font-size: 18px;
+}
+
+.star {
+  padding-left: 6px;
+  color: #fdba12 !important;
+}
+
+.stars {
+  margin-left: -20px !important;
+}
+
+.navbar-a {
+  background: #e06d09;
+}
+
+.btn-secondary {
+  border-radius: 0 !important;
+  margin-left: 10px;
+  background: #002c77 !important;
+}
+
+.btn-secondary:hover {
+  background: #054bc5 !important;
+  border: 1px solid #000000;
+}
+
+.btn-hotel {
+  margin-left: 30% !important;
+  font-size: 20px !important;
+  color: white !important;
+  background: #002c77 !important;
+}
+
+.btn-hotel:hover {
+  background: #054bc5 !important;
+  border: 1px solid #000000;
+}
+
+.card {
+  border-radius: 0 !important;
+}
+
+.container-card {
+  border-radius: 0 !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container-card h3 {
+  font-weight: bold;
+  font-size: 130%;
+  color: #157ab1;
+}
+
+.container-card span {
+  color: #157ab1;
+}
+
+.container-card a {
+  font-size: 17px;
+  -webkit-text-decoration-style: none !important;
+          text-decoration-style: none !important;
+  text-align: left;
+  color: #157ab1;
+}
+
+.container-card a:hover {
+  color: #002c77;
+}
+
+.container-card h5 {
+  text-align: left;
+  color: #157ab1;
+  cursor: pointer;
+}
+
+.container-card .card-header {
+  background: #fff;
+  margin-bottom: -18px !important;
+}
+/*# sourceMappingURL=style.css.map */
