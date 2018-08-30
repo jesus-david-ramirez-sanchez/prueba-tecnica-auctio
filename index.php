@@ -38,7 +38,7 @@ $data = json_decode( file_get_contents("http://localhost/prueba%20tecnica%20auct
 
          <!-- Sidebar Widgets Column -->
         <div class="col-md-3 col-xs-12 filtro">
-          <div class="shadow card card-header">
+          <div class="shadow card card-header cursor">
               <h5 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> <strong>Filtro</strong></h5>
             </div>
           <!-- Search Widget -->

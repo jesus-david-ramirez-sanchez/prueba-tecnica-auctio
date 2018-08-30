@@ -50,6 +50,10 @@ ul li span {
   }
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .filtro .card {
   margin-top: 17px;
   background: #fff;
