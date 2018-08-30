@@ -28,8 +28,8 @@ input[type=text]{
 
 
 img{
-    width: 350px; 
-    height: 250px;
+    max-width: 350px; 
+    max-height: 250px;
 }
 
 ul li{
@@ -53,6 +53,7 @@ ul li{
 
     h4{
         text-align: center;
+        color: rgb(224,109,9);
     }
 }
 
@@ -69,13 +70,25 @@ ul li{
     }
 }
 
-.icons span{
-    color: $gris !important;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    font-size: 18px;
+.filtro{
+    
+
+    .card{
+        margin-top: 17px;
+        background: #fff;
+    }
 }
 
+
+.icons{ 
+    margin-left: -13px !important;
+
+    .img-icons{
+        color: $gris !important;
+        width: 24px;
+        height: 24px;
+    }
+}
 
 .star{
     padding-left: 6px;
@@ -118,6 +131,11 @@ ul li{
             background: $azulOscuroHover !important;
             border: 1px solid #000000;
         }
+}
+
+
+.movil{
+    margin-right: 0 !important;
 }
 
 .card{

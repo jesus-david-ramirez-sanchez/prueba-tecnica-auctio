@@ -12,8 +12,8 @@ input[type=text] {
 }
 
 img {
-  width: 350px;
-  height: 250px;
+  max-width: 350px;
+  max-height: 250px;
 }
 
 ul li {
@@ -36,6 +36,7 @@ ul li span {
 
 .puntos h4 {
   text-align: center;
+  color: #e06d09;
 }
 
 @media screen and (max-width: 800px) {
@@ -49,11 +50,19 @@ ul li span {
   }
 }
 
-.icons span {
+.filtro .card {
+  margin-top: 17px;
+  background: #fff;
+}
+
+.icons {
+  margin-left: -13px !important;
+}
+
+.icons .img-icons {
   color: #444444 !important;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  font-size: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 .star {
@@ -90,6 +99,10 @@ ul li span {
 .btn-hotel:hover {
   background: #054bc5 !important;
   border: 1px solid #000000;
+}
+
+.movil {
+  margin-right: 0 !important;
 }
 
 .card {

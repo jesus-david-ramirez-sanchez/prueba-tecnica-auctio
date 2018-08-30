@@ -1,3 +1,16 @@
+<?php
+
+$data = json_decode( file_get_contents("http://localhost/prueba%20tecnica%20auctio/recursos/data/data.json"), true );
+
+
+
+  #  for ($i=0; $i=count( $data ); $i++) { 
+  #    echo $data[$i]["name"], "<br>";
+  #}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +18,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Prueba tecnica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./recursos  /css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"  crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+
+
     
     <!-- Just an image -->
 <nav class="navbar navbar-a">
@@ -21,16 +37,16 @@
       <div class="row">
 
          <!-- Sidebar Widgets Column -->
-        <div class="col-md-3 col-xs-12 container-card">
+        <div class="col-md-3 col-xs-12 filtro">
           <div class="shadow card card-header">
-              <h5 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="fa fa-search"></span> Nombre De Hotel</h5>
+              <h5 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> <strong>Filtro</strong></h5>
             </div>
           <!-- Search Widget -->
           <div class="collapse" id="collapseExample">
             
             <div class="shadow card carta my-4">
-            
               <div class="card-body">
+                <h5 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="fa fa-search"></span> Nombre De Hotel</h5>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel">
                   <span class="input-group-btn">
@@ -58,32 +74,68 @@
           </div>
         </div>
 
+
+
+<?php
+
+    #for ($i=0; $i=count( $data ); $i++) { 
+
+        #echo $feed[$i]["name"];
+
+
+        foreach ($data as &$data) {
+?>
+
         <!-- Blog Entries Column -->
-        <div class="container-fluid col-md-9 col-xs-12 container-card">
+        <div class="container-fluid col-md-9 col-xs-12 container-card movil">
 
           <!-- Blog Post -->
           <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             
 
             <!--========img=============-->
-              <img class="card-img-right img-fluid" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16581323a23%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16581323a23%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2256.203125%22%20y%3D%22131%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+              <img class="card-img-right img-fluid" src="<?php $img = $data['image'];  echo "./recursos/assets/images/hotels/$img"?>" data-holder-rendered="true">
 
             <!--====estructura==========-->
             <div class="card-body d-flex flex-column align-items-start">
               <h3 class="mb-0">
-                HOTEL
+                <?php echo $data["name"]; ?>
               </h3>
              <div class="container stars">
-               <span class="fa fa-star star"><span class="fa fa-star star"><span class="fa fa-star star"></span>
+                <?php #echo  $data["stars"] 
+                  $cantidad = $data["stars"] ;
+
+                  if($cantidad ===  1){
+                    echo "<span class='fa fa-star star'>";
+                  }
+                  if($cantidad ===  2){
+                    echo "<span class='fa fa-star star'><span class='fa fa-star star'>";
+                  }
+                  if($cantidad ===  3){
+                    echo "<span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'>";
+                  }
+                   if($cantidad ===  4){
+                    echo "<span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'>";
+                  }
+                   if($cantidad ===  5){
+                    echo "<span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'><span class='fa fa-star star'>";
+                  }
+
+
+                ?>  
              </div>
-                <div class="icons">
-                  <span class="fa fa-hotel"></span><span class="fa fa-cc-diners-club"></span>
+                <div class="icons container">
+                    <img class="img-icons" src="<?php $svg = $data["amenities"][0];  echo "./recursos/assets/icons/amenities/$svg.svg"?>">
+                    <img class="img-icons" src="<?php $svg = $data["amenities"][1];  echo "./recursos/assets/icons/amenities/$svg.svg"?>">
+                    <img class="img-icons" src="<?php $svg = $data["amenities"][2];  echo "./recursos/assets/icons/amenities/$svg.svg"?>">
+                    <img class="img-icons" src="<?php $svg = $data["amenities"][3];  echo "./recursos/assets/icons/amenities/$svg.svg"?>">
+                    <img class="img-icons" src="<?php $svg = $data["amenities"][4];  echo "./recursos/assets/icons/amenities/$svg.svg"?>">
                 </div>
             </div>
 
             <div class=" container-card puntos ">
               <p>Precio por noche por <br>havitacion</p>
-              <h4>ARS <strong>1.450</strong></h4>
+              <h4>ARS <?php $price = $data["price"]; echo "<strong>$price</strong>"?></h4>
               <a href="#" class="btn btn-hotel">Ver Hotel</a>
             </div>
 
@@ -97,6 +149,14 @@
     <!-- /.container -->
 
 
+
+
+<?php
+
+    }
+
+
+?>
 
 
 
